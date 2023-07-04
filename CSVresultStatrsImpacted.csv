@@ -1,0 +1,20 @@
+Version,Size of Affected Method
+1.8,0
+1.9,926
+1.9-RC1,86
+1.10,0
+1.10-RC1,255
+1.10-RC2,0
+commons-codec-1.11,0
+commons-codec-1.11-RC1,573
+commons-codec-1.12,0
+commons-codec-1.12-RC1,1248
+commons-codec-1.12-RC2,1269
+commons-codec-1.12-RC3,0
+commons-codec-1.13,563
+commons-codec-1.13-RC1,845
+commons-codec-1.14,0
+commons-codec-1.14-RC1,724
+commons-codec-1.15,0
+commons-codec-1.15-RC1,0
+commons-codec-1.16-rc1,496
