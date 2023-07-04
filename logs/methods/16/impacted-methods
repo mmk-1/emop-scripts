@@ -1,2 +1,0 @@
-org/apache/commons/fileupload2/disk/DiskFileItem#getOutputStream()
-org/apache/commons/fileupload2/disk/DiskFileItemFactory#createItem(Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;)

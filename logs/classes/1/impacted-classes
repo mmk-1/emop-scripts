@@ -1,5 +1,0 @@
-org.apache.commons.fileupload2.Util
-org.apache.commons.fileupload2.FileUploadTest
-org.apache.commons.fileupload2.SizesTest
-org.apache.commons.fileupload2.util.mime.QuotedPrintableDecoderTestCase
-org.apache.commons.fileupload2.util.mime.Base64DecoderTestCase
