@@ -14,15 +14,15 @@ classes_dirs = os.listdir(f'{logs_path}/classes')
 methods_dirs = sorted(methods_dirs, key=lambda x: int(x))
 classes_dirs = sorted(classes_dirs, key=lambda x: int(x))
 
-def count(granularity, dirs):
+def count(granularity, dirs, projection=False):
     result = []
     # For each directory (which is a commit SHA)
     for d in dirs:
         # If granularity is methods, project methods to classes.
-        if granularity == 'methods':
+        # Read the impacted.txt and changed.txt files
+        if projection == True:
             impacted_lines = set() # Essentially keeps the classes for impacted
             changed_lines = set() # Keeps the classes for changed methods
-            # Read the impacted.txt and changed.txt files
             with open(os.path.join(logs_path, granularity, d, f'impacted-{granularity}'), 'r') as impacted_file:
                 lines = impacted_file.readlines()
                 for method in lines:
@@ -53,14 +53,36 @@ def main():
     # Create a CSV file with the specified header
     with open(output_path, 'w') as f:
         writer = csv.writer(f)
-        writer.writerow(['number', 'commit_sha', 'methods_changed', 'methods_impacted', 'classes_changed', 'classes_impacted'])
+        writer.writerow(['number', 'commit_sha', 'methods_changed', 'methods_impacted', 'projected_changed_classes', 'projected_impacted_classes', 'classes_changed', 'classes_impacted'])
 
+        # Find the number of classes of methods
+        methods_projected_result = count('methods', methods_dirs, True)
         methods_result = count('methods', methods_dirs)
         classes_result = count('classes', classes_dirs)
 
         for i in range(min(len(methods_result), len(classes_result))):
             # Write the data to the CSV file
-            writer.writerow([i, methods_result[i][0], methods_result[i][1], methods_result[i][2], classes_result[i][1], classes_result[i][2]])
+            # number, commit, methods_changed
+            writer.writerow([i, methods_result[i][0], methods_result[i][1], methods_result[i][2], methods_projected_result[i][1], methods_projected_result[i][2], classes_result[i][1], classes_result[i][2]])
+
+         # Calculate the sum and average
+        methods_changed_sum = sum(methods_result[i][1] for i in range(len(methods_result)))
+        methods_impacted_sum = sum(methods_result[i][2] for i in range(len(methods_result)))
+        methods_projected_changed_sum = sum(methods_projected_result[i][1] for i in range(len(methods_projected_result)))
+        methods_projected_impacted_sum = sum(methods_projected_result[i][2] for i in range(len(methods_projected_result)))
+        classes_changed_sum = sum(classes_result[i][1] for i in range(len(classes_result)))
+        classes_impacted_sum = sum(classes_result[i][2] for i in range(len(classes_result)))
+
+        methods_changed_avg = methods_changed_sum / len(methods_result)
+        methods_impacted_avg = methods_impacted_sum / len(methods_result)
+        methods_projected_changed_avg = methods_projected_changed_sum / len(methods_projected_result)
+        methods_projected_impacted_avg = methods_projected_impacted_sum / len(methods_projected_result)
+        classes_changed_avg = classes_changed_sum / len(classes_result)
+        classes_impacted_avg = classes_impacted_sum / len(classes_result)
+
+        # Write the sum and average rows to the CSV file
+        writer.writerow(['SUM', '0', methods_changed_sum, methods_impacted_sum, methods_projected_changed_sum, methods_projected_impacted_sum, classes_changed_sum, classes_impacted_sum])
+        writer.writerow(['AVERAGE', '0', methods_changed_avg, methods_impacted_avg, methods_projected_changed_avg, methods_projected_impacted_avg, classes_changed_avg, classes_impacted_avg])
 
     print("DONE!")
 
