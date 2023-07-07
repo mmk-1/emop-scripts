@@ -16,15 +16,30 @@ classes_dirs.sort()
 
 def count(granularity, dirs):
     result = []
-    # print("DIRS")
-    # print(dirs)
-    # For each directory (commit SHA)
+    # For each directory (which is a commit SHA)
     for d in dirs:
-        # Read the impacted.txt and changed.txt files
-        with open(os.path.join(logs_path, granularity, d, f'impacted-{granularity}'), 'r') as impacted_file:
-            impacted_lines = impacted_file.readlines()
-        with open(os.path.join(logs_path, granularity, d, f'changed-{granularity}'), 'r') as changed_file:
-            changed_lines = changed_file.readlines()
+        # If granularity is methods, project methods to classes.
+        if granularity == 'methods':
+            impacted_lines = set() # Essentially keeps the classes for impacted
+            changed_lines = set() # Keeps the classes for changed methods
+            # Read the impacted.txt and changed.txt files
+            with open(os.path.join(logs_path, granularity, d, f'impacted-{granularity}'), 'r') as impacted_file:
+                lines = impacted_file.readlines()
+                for method in lines:
+                    the_class = method.strip().split('#')[0]
+                    impacted_lines.add(the_class)
+            with open(os.path.join(logs_path, granularity, d, f'changed-{granularity}'), 'r') as changed_file:
+                lines = changed_file.readlines()
+                for method in lines:
+                    the_class = method.strip().split('#')[0]
+                    impacted_lines.add(the_class)
+            print(impacted_lines)
+            print(changed_lines)
+        else:
+            with open(os.path.join(logs_path, granularity, d, f'impacted-{granularity}'), 'r') as impacted_file:
+                impacted_lines = impacted_file.readlines()
+            with open(os.path.join(logs_path, granularity, d, f'changed-{granularity}'), 'r') as changed_file:
+                changed_lines = changed_file.readlines()
         with open(os.path.join(logs_path, granularity, d, f'commit'), 'r') as commit_file:
             commit_sha = commit_file.readlines()[0].strip()
 

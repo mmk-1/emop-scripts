@@ -20,7 +20,7 @@ while IFS=, read -r REPO COMMIT
 do
     echo $REPO
     bash ${HELPERS_DIR}/run_20_version.sh methods $REPO $COMMIT
-    # bash ${HELPERS_DIR}/run_20_version.sh classes $REPO $COMMIT
+    bash ${HELPERS_DIR}/run_20_version.sh classes $REPO $COMMIT
     python3 ${HELPERS_DIR}/extract_data/extract.py $REPO
 done 
 } < $CSV_FILE

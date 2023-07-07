@@ -44,12 +44,12 @@ START_COMMIT=$3
 if [ "$GRANULARITY" = "methods" ]
 then
   echo "Method-level Analysis"
-  MVN_COMMAND="mvn starts:methods -DupdateMethodsChecksums=true -Drat.skip"
+  MVN_COMMAND="mvn starts:methods -DupdateMethodsChecksums=true -Drat.skip -Denforcer.skip"
   LOGS_DIR=${LOGS_DIR}/methods
 elif [ "$GRANULARITY" = "classes" ]
 then
   echo "Class-level Analysis"
-  MVN_COMMAND="mvn starts:impacted -DupdateImpactedChecksums=true -Drat.skip"
+  MVN_COMMAND="mvn starts:impacted -DupdateImpactedChecksums=true -Drat.skip -Denforcer.skip"
   LOGS_DIR=${LOGS_DIR}/classes
 else
   echo "Invalid input"
@@ -78,7 +78,7 @@ rm -rf .starts/
 COUNTER=0
 
 # Main loop. You can adjust the number of versions to run STARTS on with --max-count=<n>
-for commit in $(git rev-list --max-count=20 --abbrev-commit --reverse ${START_COMMIT});
+for commit in $(git rev-list --max-count=5 --abbrev-commit --reverse ${START_COMMIT});
 do
     # Extract the relevant commit
     git checkout -f ${commit}
@@ -95,21 +95,24 @@ do
     # Modify pom file to insert STARTS
     sed -i "/<\/plugins>/i\\$PLUGIN" pom.xml
 
-    # For class-level, the starts:impacted will not find the changed-classes if we don't generate
-    # a starting deps.zlc file. So we execute this before starting the main loop. For method level
-    # we don't have this. We should unify the approaches later
-    if [[ "$GRANULARITY" = "classes" && $COUNTER == 0 ]]
-    then
-        mvn starts:starts -Drat.skip -Dcheckstyle.skip -DskipTests=True
-    fi
-
     # Make sub dir in logs/classes or logs/methods. We keep the commit as a seperate file
     # called "commit" inside ${LOGS_DIR}/${COUNTER}
     mkdir -p ${LOGS_DIR}/${COUNTER}
     
-    # Run STARTS
-    ${MVN_COMMAND} | tee ${LOGS_DIR}/${COUNTER}/maven_log
 
+    # For class-level, the starts:impacted will not find the changed-classes if we don't generate
+    # a starting deps.zlc file. So we execute this before starting the main loop. For method level
+    # we don't have this. We should unify the approaches later
+    # if [[ "$GRANULARITY" = "classes" && $COUNTER == 0 ]]
+    # then
+    #   echo "we are here!"
+    #   mvn starts:starts -Drat.skip -Dcheckstyle.skip -DskipTests=True
+    #   mvn starts:impacted -Drat.skip | tee ${LOGS_DIR}/${COUNTER}/maven_log
+    # else
+      # Run STARTS
+    ${MVN_COMMAND} | tee ${LOGS_DIR}/${COUNTER}/maven_log
+    # fi
+    
     # Copy STARTS result files into the logs
     cp .starts/* ${LOGS_DIR}/${COUNTER}
     
