@@ -11,8 +11,8 @@ absolute_path = os.path.dirname(__file__)
 logs_path = os.path.join(absolute_path, f'../../logs/{author}/{project}')
 methods_dirs = os.listdir(f'{logs_path}/methods')
 classes_dirs = os.listdir(f'{logs_path}/classes')
-methods_dirs.sort()
-classes_dirs.sort()
+methods_dirs = sorted(methods_dirs, key=lambda x: int(x))
+classes_dirs = sorted(classes_dirs, key=lambda x: int(x))
 
 def count(granularity, dirs):
     result = []
@@ -32,9 +32,7 @@ def count(granularity, dirs):
                 lines = changed_file.readlines()
                 for method in lines:
                     the_class = method.strip().split('#')[0]
-                    impacted_lines.add(the_class)
-            print(impacted_lines)
-            print(changed_lines)
+                    changed_lines.add(the_class)
         else:
             with open(os.path.join(logs_path, granularity, d, f'impacted-{granularity}'), 'r') as impacted_file:
                 impacted_lines = impacted_file.readlines()

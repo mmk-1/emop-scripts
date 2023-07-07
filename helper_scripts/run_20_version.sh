@@ -58,6 +58,11 @@ fi
 
 # Make the logs dir and its subdirs
 mkdir -p ${LOGS_DIR}
+
+# Make these dirs just in case
+mkdir -p ${SCRIPT_DIR}/repos
+mkdir -p ${SCRIPT_DIR}/outputs
+
 # Move to project dir
 cd ${PROJECT_DIR}
 
@@ -78,7 +83,7 @@ rm -rf .starts/
 COUNTER=0
 
 # Main loop. You can adjust the number of versions to run STARTS on with --max-count=<n>
-for commit in $(git rev-list --max-count=5 --abbrev-commit --reverse ${START_COMMIT});
+for commit in $(git rev-list --max-count=20 --abbrev-commit --reverse ${START_COMMIT});
 do
     # Extract the relevant commit
     git checkout -f ${commit}

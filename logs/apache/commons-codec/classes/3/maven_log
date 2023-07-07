@@ -1,0 +1,79 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< commons-codec:commons-codec >---------------------
+[INFO] Building Apache Commons Codec 1.16-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> starts-maven-plugin:1.4-SNAPSHOT:impacted (default-cli) > test-compile @ commons-codec >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ commons-codec ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-3) @ commons-codec ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ commons-codec ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ commons-codec ---
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.8:run (javadoc.resources) @ commons-codec ---
+[INFO] Executing tasks
+
+main:
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ commons-codec ---
+[INFO] Skipping remote resources execution.
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ commons-codec ---
+[INFO] Executing: /bin/sh -c cd '/workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec
+[INFO] Storing buildNumber: a7824cdffa9a1d0d0bb150aed3942f87556ba760 at timestamp: 1688736851688
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ commons-codec ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 128 resources
+[INFO] Copying 2 resources to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ commons-codec ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 72 source files to /workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec/target/classes
+[INFO] 
+[INFO] --- maven-bundle-plugin:5.1.1:manifest (bundle-manifest) @ commons-codec ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ commons-codec ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 2 resources to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ commons-codec ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 71 source files to /workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec/target/test-classes
+[INFO] /workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec/src/test/java/org/apache/commons/codec/binary/Base32Test.java: Some input files use or override a deprecated API.
+[INFO] /workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec/src/test/java/org/apache/commons/codec/binary/Base32Test.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] <<< starts-maven-plugin:1.4-SNAPSHOT:impacted (default-cli) < test-compile @ commons-codec <<<
+[INFO] 
+[INFO] 
+[INFO] --- starts-maven-plugin:1.4-SNAPSHOT:impacted (default-cli) @ commons-codec ---
+run impact
+*The affected classes are:[]
+*The size of affected class:0
+*The affected methods are: []
+*The size of afffected method:0
+INFO: STARTS:Nodes: 210
+INFO: STARTS:Edges: 758
+The class is doing
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 4.678 s
+[INFO] Finished at: 2023-07-07T13:34:14Z
+[INFO] ------------------------------------------------------------------------

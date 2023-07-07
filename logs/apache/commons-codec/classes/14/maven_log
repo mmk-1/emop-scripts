@@ -1,0 +1,79 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< commons-codec:commons-codec >---------------------
+[INFO] Building Apache Commons Codec 1.16-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> starts-maven-plugin:1.4-SNAPSHOT:impacted (default-cli) > test-compile @ commons-codec >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-version) @ commons-codec ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven-3) @ commons-codec ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.13:check (rat-check) @ commons-codec ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ commons-codec ---
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.8:run (javadoc.resources) @ commons-codec ---
+[INFO] Executing tasks
+
+main:
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ commons-codec ---
+[INFO] Skipping remote resources execution.
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ commons-codec ---
+[INFO] Executing: /bin/sh -c cd '/workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec
+[INFO] Storing buildNumber: 62d55fdd9ff6ae56789b38808a60b49aa30a18ce at timestamp: 1688736906802
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ commons-codec ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 128 resources
+[INFO] Copying 2 resources to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ commons-codec ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 72 source files to /workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec/target/classes
+[INFO] 
+[INFO] --- maven-bundle-plugin:5.1.1:manifest (bundle-manifest) @ commons-codec ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ commons-codec ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 2 resources to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ commons-codec ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 72 source files to /workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec/target/test-classes
+[INFO] /workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec/src/test/java/org/apache/commons/codec/digest/MurmurHash3Test.java: Some input files use or override a deprecated API.
+[INFO] /workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec/src/test/java/org/apache/commons/codec/digest/MurmurHash3Test.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] <<< starts-maven-plugin:1.4-SNAPSHOT:impacted (default-cli) < test-compile @ commons-codec <<<
+[INFO] 
+[INFO] 
+[INFO] --- starts-maven-plugin:1.4-SNAPSHOT:impacted (default-cli) @ commons-codec ---
+run impact
+*The affected classes are:[file:/workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec/target/classes/org/apache/commons/codec/digest/UnixCrypt.class, file:/workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec/target/classes/org/apache/commons/codec/language/bm/Rule.class, file:/workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec/target/classes/org/apache/commons/codec/cli/Digest.class, file:/workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec/target/classes/org/apache/commons/codec/binary/Hex.class, file:/workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec/target/classes/org/apache/commons/codec/language/bm/Rule$Phoneme$1.class, file:/workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec/target/classes/org/apache/commons/codec/net/QuotedPrintableCodec.class, file:/workspaces/rv-project/my-rv/emop-scripts/repos/commons-codec/target/classes/org/apache/commons/codec/binary/BinaryCodec.class]
+*The size of affected class:7
+*The affected methods are: [body([III), byteToUnsigned(B), encodeQuotedPrintable(Ljava/util/BitSet;[BZ), encodeByte(IZLjava/io/ByteArrayOutputStream;), <init>([Ljava/lang/String;), decode(Ljava/lang/String;), desSetKey([B), fourBytesToInt([BI), pattern(Ljava/lang/String;), <init>(), intToFourBytes(I[BI), encodeHex(Ljava/nio/ByteBuffer;Z), hPermOp(III), decodeHex([C[BI), encodeHex([BIIZ), crypt(Ljava/lang/String;Ljava/lang/String;), encodeHexString([B), encodeHex([BZ), run([Ljava/lang/String;), encode([B), parseRules(Ljava/util/Scanner;Ljava/lang/String;), crypt([BLjava/lang/String;), println(Ljava/lang/String;[BLjava/lang/String;), crypt([B), getCharset(), encodeHex([B[C), decode(Ljava/lang/String;Ljava/nio/charset/Charset;), parsePhoneme(Ljava/lang/String;), run(Ljava/lang/String;Ljava/security/MessageDigest;[Ljava/io/File;), createScanner(Lorg/apache/commons/codec/language/bm/NameType;Lorg/apache/commons/codec/language/bm/RuleType;Ljava/lang/String;), decode(Ljava/lang/Object;), decode([B), fromAscii([C), <init>(Ljava/lang/String;), encodeHex([BII[C[CI), encode(Ljava/lang/String;Ljava/nio/charset/Charset;), getPattern(), encodeHex(Ljava/nio/ByteBuffer;[C), access$100(Ljava/lang/CharSequence;Ljava/lang/CharSequence;), decodeHex([C), getPhoneme(), startsWith(Ljava/lang/CharSequence;Ljava/lang/CharSequence;), encode(Ljava/nio/ByteBuffer;), createScanner(Ljava/lang/String;), permOp(IIII[I), <init>(Z), encodeHex([BIIZ[CI), dEncrypt(IIIII[I), getInstance(Lorg/apache/commons/codec/language/bm/NameType;Lorg/apache/commons/codec/language/bm/RuleType;Ljava/lang/String;), <init>(Ljava/nio/charset/Charset;), getDefaultCharset(), getInstance(Lorg/apache/commons/codec/language/bm/NameType;Lorg/apache/commons/codec/language/bm/RuleType;Lorg/apache/commons/codec/language/bm/Languages$LanguageSet;), encodeHex(Ljava/nio/ByteBuffer;), crypt(Ljava/lang/String;), toDigit(CI), createResourceName(Lorg/apache/commons/codec/language/bm/NameType;Lorg/apache/commons/codec/language/bm/RuleType;Ljava/lang/String;), encodeHex([B), toAsciiChars([B), main([Ljava/lang/String;), toByteArray(Ljava/nio/ByteBuffer;), getUnsignedOctet(I[B), encodeQuotedPrintable(ILjava/io/ByteArrayOutputStream;), getCharsetName(), toAsciiBytes([B), decode(Ljava/lang/String;Ljava/lang/String;), toString(), <clinit>(), patternAndContextMatches(Ljava/lang/CharSequence;I), run(Ljava/lang/String;Ljava/lang/String;), contains(Ljava/lang/CharSequence;C), run(), getRContext(), decodeHex(Ljava/lang/String;), encode(Ljava/lang/String;Ljava/lang/String;), getLContext(), fromAscii([B), endsWith(Ljava/lang/CharSequence;Ljava/lang/CharSequence;), parsePhonemeExpr(Ljava/lang/String;), encodeHexString([BZ), toAsciiString([B), encodeHexString(Ljava/nio/ByteBuffer;Z), run(Ljava/lang/String;Ljava/security/MessageDigest;), encodeQuotedPrintable(Ljava/util/BitSet;[B), getInstanceMap(Lorg/apache/commons/codec/language/bm/NameType;Lorg/apache/commons/codec/language/bm/RuleType;Lorg/apache/commons/codec/language/bm/Languages$LanguageSet;), encodeHexString(Ljava/nio/ByteBuffer;), <init>(Ljava/nio/charset/Charset;Z), getInstanceMap(Lorg/apache/commons/codec/language/bm/NameType;Lorg/apache/commons/codec/language/bm/RuleType;Ljava/lang/String;), access$200(Ljava/lang/CharSequence;Ljava/lang/CharSequence;), println(Ljava/lang/String;[B), isEmpty([B), encode(Ljava/lang/Object;), <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/apache/commons/codec/language/bm/Rule$PhonemeExpr;), decodeQuotedPrintable([B), compare(Ljava/lang/Object;Ljava/lang/Object;), decode(Ljava/nio/ByteBuffer;), toByteArray(Ljava/lang/String;), isWhitespace(I), stripQuotes(Ljava/lang/String;), compare(Lorg/apache/commons/codec/language/bm/Rule$Phoneme;Lorg/apache/commons/codec/language/bm/Rule$Phoneme;), encode(Ljava/lang/String;), access$300(Ljava/lang/CharSequence;C)]
+*The size of afffected method:101
+INFO: STARTS:Nodes: 211
+INFO: STARTS:Edges: 760
+The class is doing
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 4.619 s
+[INFO] Finished at: 2023-07-07T13:35:09Z
+[INFO] ------------------------------------------------------------------------

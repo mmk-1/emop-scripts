@@ -1,0 +1,9 @@
+org.apache.commons.codec.binary.Base64Test
+org.apache.commons.codec.binary.Base64
+org.apache.commons.codec.net.BCodecTest
+org.apache.commons.codec.binary.Base64OutputStreamTest
+org.apache.commons.codec.net.BCodec
+org.apache.commons.codec.binary.Base64InputStream
+org.apache.commons.codec.binary.Base64OutputStream
+org.apache.commons.codec.binary.Base64Codec13Test
+org.apache.commons.codec.binary.Base64InputStreamTest

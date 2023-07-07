@@ -1,0 +1,7 @@
+org/apache/commons/codec/binary/Base64Test#testIsUrlSafe()
+org/apache/commons/codec/binary/Base64Test#testNonBase64Test()
+org/apache/commons/codec/binary/Base64Test#testEncodeDecodeSmall()
+org/apache/commons/codec/binary/Base64#isArrayByteBase64([B)
+org/apache/commons/codec/binary/Base64Test#testEncodeDecodeRandom()
+org/apache/commons/codec/binary/Base64#isBase64(Ljava/lang/String;)
+org/apache/commons/codec/binary/Base64Test#testIsArrayByteBase64()

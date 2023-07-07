@@ -1,0 +1,80 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< org.apache.commons:commons-fileupload2 >---------------
+[INFO] Building Apache Commons FileUpload 2.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> starts-maven-plugin:1.4-SNAPSHOT:impacted (default-cli) > test-compile @ commons-fileupload2 >>>
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate-main) @ commons-fileupload2 ---
+[INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
+[INFO] Starting audit...
+Audit done.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ commons-fileupload2 ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ commons-fileupload2 ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-3) @ commons-fileupload2 ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.15:check (rat-check) @ commons-fileupload2 ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- build-helper-maven-plugin:3.3.0:parse-version (parse-version) @ commons-fileupload2 ---
+[INFO] 
+[INFO] --- maven-antrun-plugin:3.1.0:run (javadoc.resources) @ commons-fileupload2 ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ commons-fileupload2 ---
+[INFO] Skipping remote resources execution.
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:3.0.0:create (default) @ commons-fileupload2 ---
+[INFO] Executing: /bin/sh -c cd '/workspaces/rv-project/my-rv/emop-scripts/repos/commons-fileupload' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /workspaces/rv-project/my-rv/emop-scripts/repos/commons-fileupload
+[INFO] Storing buildNumber: null at timestamp: 1688736573961
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: /bin/sh -c cd '/workspaces/rv-project/my-rv/emop-scripts/repos/commons-fileupload' && 'git' 'rev-parse' '--verify' 'HEAD'
+[INFO] Working directory: /workspaces/rv-project/my-rv/emop-scripts/repos/commons-fileupload
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.0:resources (default-resources) @ commons-fileupload2 ---
+[INFO] skip non existing resourceDirectory /workspaces/rv-project/my-rv/emop-scripts/repos/commons-fileupload/src/main/resources
+[INFO] Copying 2 resources to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ commons-fileupload2 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 49 source files to /workspaces/rv-project/my-rv/emop-scripts/repos/commons-fileupload/target/classes
+[INFO] 
+[INFO] --- maven-bundle-plugin:5.1.8:manifest (bundle-manifest) @ commons-fileupload2 ---
+[INFO] Writing manifest: /workspaces/rv-project/my-rv/emop-scripts/repos/commons-fileupload/target/osgi/MANIFEST.MF
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.0:testResources (default-testResources) @ commons-fileupload2 ---
+[INFO] skip non existing resourceDirectory /workspaces/rv-project/my-rv/emop-scripts/repos/commons-fileupload/src/test/resources
+[INFO] Copying 2 resources to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ commons-fileupload2 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 21 source files to /workspaces/rv-project/my-rv/emop-scripts/repos/commons-fileupload/target/test-classes
+[INFO] /workspaces/rv-project/my-rv/emop-scripts/repos/commons-fileupload/src/test/java/org/apache/commons/fileupload2/jaksrvlt/MockJakSrvltHttpRequest.java: /workspaces/rv-project/my-rv/emop-scripts/repos/commons-fileupload/src/test/java/org/apache/commons/fileupload2/jaksrvlt/MockJakSrvltHttpRequest.java uses or overrides a deprecated API.
+[INFO] /workspaces/rv-project/my-rv/emop-scripts/repos/commons-fileupload/src/test/java/org/apache/commons/fileupload2/jaksrvlt/MockJakSrvltHttpRequest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] <<< starts-maven-plugin:1.4-SNAPSHOT:impacted (default-cli) < test-compile @ commons-fileupload2 <<<
+[INFO] 
+[INFO] 
+[INFO] --- starts-maven-plugin:1.4-SNAPSHOT:impacted (default-cli) @ commons-fileupload2 ---
+run impact
+INFO: STARTS:Nodes: 102
+INFO: STARTS:Edges: 302
+The class is doing
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 5.355 s
+[INFO] Finished at: 2023-07-07T13:29:36Z
+[INFO] ------------------------------------------------------------------------
