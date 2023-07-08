@@ -1,0 +1,65 @@
+%%%%%%%%%% PACKAGES
+%\usepackage{url}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{cite}
+\usepackage{enumitem}
+%\usepackage{rotating}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{color}
+\IfFileExists{/home/marinov/.bashrc}{}{
+        \usepackage{caption}
+        \DeclareCaptionType{copyrightbox}
+}
+%\usepackage[position=below]{subfig}
+%\usepackage{xspace}
+\usepackage{rotate}
+\usepackage[table,svgnames]{xcolor}
+\usepackage[bookmarks=false,colorlinks=true,linkcolor=Maroon,citecolor=MidnightBlue,urlcolor=MidnightBlue]{hyperref}
+\usepackage{breakurl}
+\usepackage{flushend}
+
+%%%%%%%%%% UNCLASSIFIED
+\newcommand{\Caption}[1]{\caption{#1}}
+\newcommand{\NA}{-}
+\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+\newcommand{\DefMacro}[2]{%
+   \expandafter\newcommand\csname rmk-#1\endcsname{#2}%
+}
+\newcommand{\UseMacro}[1]{\csname rmk-#1\endcsname}
+\newcommand{\mybold}[1]{\textbf{#1}}
+\newcommand{\CodeIn}[1]{{\small \texttt{#1}}}
+\newcommand{\BIEntry}[1]{\textbf{\textit{#1}}}
+\newcommand{\Importance}[1]{}
+
+\newcommand{\YC}{\textcolor{blue}{\textbf{+}}} %{$\checkmark$}}
+\newcommand{\NC}{\textcolor{red}{\textbf{-}}} %\textbf{$\times$}}}
+\newcommand{\MC}{\textcolor{magenta}{\textbf{$\pm$}}}
+
+\newcommand{\Fix}[1]{\textcolor{red}{[#1]}}
+\newcommand{\Comment}[1]{}
+\newcommand{\Boldface}[1]{\textbf{#1}}
+\newcommand{\Space}[1]{} %~#1}
+
+\newcommand{\MeanStd}[2]{#1$\pm$#2}
+\newcommand{\MeanStdSec}[2]{#1$\pm$#2 seconds}
+
+
+% ----------
+% THIS BELOW COPIED FROM vkuncak/doc/vmcai09/defs.tex
+\definecolor{gray}{RGB}{211,211,211}
+\newcommand{\jbasicstyle}{\scriptsize\sffamily}
+\newcommand{\textcode}[1]{{#1}}
+\newcommand{\jnumberstyle}{\tiny}
+\newcommand{\Hilight}{\makebox[0pt][l]{\color{gray}\rule[-3pt]{0.80\linewidth}{9pt}}}
+\lstdefinelanguage{pseudo}{
+  morekeywords={if,else,foreach,return,struct},
+  keywordstyle=\bfseries, lineskip=-0.1em, numbers=none,
+  numberstyle=\jnumberstyle, numbersep=4pt, basicstyle=\scriptsize,
+  basicstyle=\jbasicstyle, breaklines=true, breakautoindent=true,
+  tabsize=2, columns=fullflexible, morecomment=*[l][\textsl]{//},
+  mathescape=true, }
+\lstset{escapeinside={(*@}{@*)}}
