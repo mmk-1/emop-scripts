@@ -1,0 +1,63 @@
+- Inspect the results of `commons-fileupload` and `commons-codec` and
+  check the correctness of those results. One class of bug that we
+  already saw: in row 12 (commit: 7410e99) of commons-codec, there are
+  impacted classes but no impacted methods. Why? Could it be because
+  fields have changed? Also, some impacted classes column are non-zero
+  even though changed classes column is zero. Why?
+
+  - (Mahdi) inspect five non-zero rows in commons-codec where some
+    classes are impacted at the class level; document your findings,
+    including why you think classes/methods were rightly (or wrongly)
+    included in the results, in paper/appendix.tex under "Mahdi's
+    Inspections". Make sure that you can build the paper using `make`
+    and that you can view the PDF.
+  
+  - (Moustafa) inspect five non-zero rows in commons-codec where some classes are
+    impacted at the class level; document your findings, including why
+    you think classes/methods were rightly (or wrongly) included in
+    the results, in paper/appendix.tex under "Moustafa’s
+    Inspections". Make sure that you can build the paper using `make`
+    and that you can view the PDF.
+  
+  - (Jiang Wu) inspect all the remaining non-zero rows that Mahdi or
+    Moustafa did not check; document your findings, including why you
+    think classes/methods were rightly (or wrongly) included in the
+    results, in paper/appendix.tex under "Jiang's Inspections". Make
+    sure that you can build the paper using `make` and that you can
+    view the PDF.
+
+- (Moustafa) Understand how does Yuki's code generates the
+  method-level dependency graph. Summarize your findings
+  paper/appendix.tex, under "How Method-Level Change-Impact Analysis
+  Works".
+
+- (Mahdi) Fix bug in the first commit of both projects: all methods
+  should be considered as impacted but they are not.
+
+- (Jiang Wu) Run Mahdi's script on at least 10 more projects and put
+  all the tables (including those for commons-codec and
+  commons-fileupload) in `paper/appendix.tex`, under "Method-
+  vs. Class-Level Change Impact Analysis".
+
+  - send Owolabi a DM for suggestions of what projects to try.
+  
+- (Mahdi) Integrate STARTS method-level analysis with emop
+  (https://github.com/SoftEngResearch/emop).
+
+  -- Fork emop, and create a branch so that you can make a PR later.
+
+  -- Ask Owolabi for help if you get stuck
+
+- (Moustafa) When Mahdi is done integrating method-level analysis into
+  emop, write script to run emop with method-level analysis, compare
+  emop^M (emop with method-level analysis) with emop^C (emop with
+  class-level analysis), run that script on the same projects that
+  used for change-impact analysis, and put the results in
+  paper/appendix.tex, under "Method- vs. Class-Level eMOP Results".
+
+
+
+
+
+
+
