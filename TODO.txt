@@ -54,10 +54,3 @@
   class-level analysis), run that script on the same projects that
   used for change-impact analysis, and put the results in
   paper/appendix.tex, under "Method- vs. Class-Level eMOP Results".
-
-
-
-
-
-
-
